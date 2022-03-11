@@ -139,7 +139,7 @@ SET NOCOUNT ON
 DECLARE @Cars TABLE (id uniqueidentifier DEFAULT NEWID(), carname VARCHAR(20), 
 	lastservice datetime DEFAULT getdate(), SpeedMPH INT, Details CHAR (7000));
 DECLARE @ConsistentResults INT = 0
-WHILE 1=1
+WHILE @ConsistentResults < 100
 BEGIN
 	DELETE FROM @Cars
 	INSERT INTO @Cars SELECT * FROM Cars --SNAPSHOT HINT ONLY RELEVANT TO IMTABLES
@@ -149,6 +149,8 @@ BEGIN
 	SET @ConsistentResults = @ConsistentResults + 1
 	WAITFOR DELAY '00:00:00.013'
 END
+SELECT @ConsistentResults AS SuccessfulPriorRuns
+SELECT * FROM @Cars
 
 
 -- Let's transition back to READ COMMITTED default

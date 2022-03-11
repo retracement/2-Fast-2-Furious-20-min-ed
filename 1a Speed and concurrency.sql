@@ -66,7 +66,7 @@ WHERE id = (1+ ABS(CHECKSUM(NewId())) % 50998)
 CREATE CLUSTERED INDEX IX_table1_id ON table1 (id)
 
 
--- Run the update again
+-- Run the update in SQLQueryStress again!
 -- How long does it take this time?
 
 

@@ -20,9 +20,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
-/*************/
+/****************/
 /* 0a Setup.sql */
-/*************
+/****************
 The following script drops the 2Fast2Furious if it exists and recreates 
 it with all the necessary tables, data, and procedures*/
 
